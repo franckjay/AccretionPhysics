@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{mathtools}
+
+
+\begin{document}
+\title{Homework 8}
+\author{Jay Franck}
+\maketitle
+
+
+
+\section*{1b}
+
+Before all the transitions in this hypothetical 3-level atom are listed, a few things should be defined first. The number density of a particle is defined as $n_e$ (for an electron) or $n_\#$ (number of particles with electrons in energy level $\#$). The collisional excitation rate is $q_{nm}$ where n is a lower energy level, and m is a greater level (i.e. an electron is excited from level $n \rightarrow m$, which is found by
+
+\begin{equation}
+q_{nm} = \int_{v_0}^\infty v \sigma_{nm} f(v) dv
+\end{equation}
+
+where $\sigma_{nm}$ is the cross section and $f(v)$ is the Maxwell Distribution. It is important to note that collisional de-excitation can occur ($q_{mn}$) and will be included in the final answer. The atom can radiatively decay or become excited as well, which are expressed using the Einstein $A_{nm}$ $\&$ $B_{nm} $ coefficients, respectively. Another change in energy levels can occur in the process of recombination, where electrons and ions combine to form atoms. Interestingly, there is no selection effect for the electron to jump into n=1 during recombination. The rate of recombination (in units of per volume, per second) is $ = \alpha_n n_e n_{ions} $, where 
+
+\begin{equation}
+\alpha_n = \int_{0}^\infty v \sigma_{v} f(v) dv
+\end{equation}
+
+A final possibility of an electron leaving n=2 comes from the process of photoionization, where the electron is completely removed from the atom. This depends on the energy of the electron orbital, and the strength of the photon that collides with the atom:
+
+\begin{equation}
+ \int_{\nu_n}^\infty \frac{4 \pi J_{\nu} d\nu}{h \nu}
+\end{equation}
+
+where $J_{\nu}$ is the emission line strength, and $\nu_n$ is the minimum frequency needed to completely ionize the atom.
+
+The ways to populate n = 2 include the collisional de-excitation from level 3 to 2 ($n_e n_{3} q_{32}$) by an electron, the collisional excitation from  n=1 $\rightarrow$2, ($Rate = n_e n_{1} q_{12}$), and recombination of an electron and an ion into n=2 ($Rate = \alpha_2 n_e n_{ions} $). The n=2 level can be entered by the electron jumping down from n =3 $\rightarrow$ 2 and emitting a photon of the energy difference between the two levels, characterized by the radiative rate $n_3 A_{32}$. There is the possibility that an electron will be excited by a photon absorbed by the atom and jump from n=1$\rightarrow$2, which depends on the $B$ Einstein coefficient by:$n_1 B_12 J_{\nu}$. A photon could also pass close to the atom and prompt the electron to drop to a lower energy level and release a photon in a process called stimulated emission: $n_3 B_32 J_{\nu}$
+
+The ways to de-populate n = 2 are quite similar in many instances. One very different event is called photoionization, where an energetic photon strikes the atom (with an electron in the n=2 level) and causes the electron to free itself from the system altogether, creating an ion. Refer to Equation (3) for the representation of this (inserting $2$ for the value of $n$). De-populating the n=2 level can be done through collisional excitations ($n_e n_{2} q_{23}$) and de-excitations ($n_e n_{2} q_{21}$). Radiatively, an electron can spontaneously decay into a lower energy level and release a photon $n_2 A_{21}$, it can have a stimulated emission as before, but moving from n=2$\rightarrow$1 by $n_2 B_21 J_{\nu}$, or can absorb a photon and increase in energy level $n_2 B_23 J_{\nu}$.
+
+\begin{equation}
+Rate In = Rate Out
+\end{equation}
+
+\begin{equation}
+\begin{split}
+n_e n_{3} q_{32} + & n_e n_{1} q_{12} + \alpha_2 n_e n_{ions} + n_3 A_{32} + n_1 B_12 J_{\nu} + n_3 B_32 J_{\nu} =  \int_{\nu_2}^\infty \frac{4 \pi J_{\nu} d\nu}{h \nu} \\
+& + n_e n_{2} q_{23} + n_e n_{2} q_{21} + n_2 A_{21} + n_2 B_21 J_{\nu} + n_2 B_23 J_{\nu}
+\end{split}
+\end{equation}
+
+\section*{4}
+\subsection*{a}
+
+A sphere of with roughly the mass of $10^{11} M_{\odot}$, temperature $T=10^6 \, K$ and a radius $R = 10 kpc = 3.086 \times 10^{22} \, cm$ has a volume $V = \frac{4}{3} \pi (3.086 \times 10^{22} \, cm)^3 = 1.23 \times 10^{68} \, cm^3 $. In order to find the number density of electrons ($n_e$) we must first find the number of hydrogen ions. Neglecting the mass of the electron, $ \#_H = M_{MW} / m_H = \frac{1.99 \times 10^{44} \, g}{1.67 \times 10^{-24} \, g} = 1.19 \times 10^{68}$ hydrogen ions, and essentially the number of electrons. To find the number density, $n_e = \frac{1.19 \times 10^{68}}{1.23 \times 10^{68} \, cm^3} = 0.967 \, cm^{-3}$, or roughly one electron per cubic centimeter.
+
+\subsection*{b}
+
+The mean free path $l$ is found by:
+
+\begin{equation}
+l = \frac{\tau}{\sigma_T n_e } = \frac{1}{(6.65 \times 10^{-25} \,cm^2)(0.967 \, cm^{-3})} = 5.04 \times 10^5 \, parsecs
+\end{equation}
+
+The mean free path is quite large, therefore the gas is optically thin.
+
+\subsection*{c}
+
+From the notes: $t_{cool} = \frac{E_{thermal}}{\dot{E}}= \frac{3n_e V k T}{2n_e^2 V T^{1/2}} \propto \frac{3kT^{1/2}}{2n_e}$, and can be shown to have a characteristic cooling time $\tau$ which is
+\begin{equation}
+\tau = 2 \times 10^{11} \frac{T^{1/2}}{n_e} = 2 \times 10^{11} \frac{(10^6)^{1/2}}{0.967} = 2.07 \times 10^{14} \, sec
+\end{equation}
+
+This cooling time translates roughly to 6.56 million years.
+
+
+\subsection*{d}
+
+\section*{5}
+
+\section*{6}
+
+\end{document}
